@@ -1,0 +1,29 @@
+PODS:
+  - Bolts/Tasks (1.2.0)
+  - Firebase (2.3.2)
+  - googleplus-ios-sdk (1.7.1)
+  - HanekeSwift (0.9.1)
+  - OAuthSwift (0.3.6)
+  - Parse (1.7.5):
+    - Bolts/Tasks (>= 1.2.0)
+  - ParseUI (1.1.4):
+    - Parse (~> 1.7)
+
+DEPENDENCIES:
+  - Firebase (>= 2.3.2)
+  - googleplus-ios-sdk
+  - HanekeSwift
+  - OAuthSwift (~> 0.3.4)
+  - Parse (~> 1.7.1)
+  - ParseUI (~> 1.1.3)
+
+SPEC CHECKSUMS:
+  Bolts: d176cb1e0012175589e389a9db49b85e27787576
+  Firebase: 02fbeacfe19970856c872321788194524f21ffed
+  googleplus-ios-sdk: 065d9135061a5f84c07656a68ced48336408fe35
+  HanekeSwift: 50d37bfbc4432edc649167e538c259feccb4a2bb
+  OAuthSwift: 3517e94380923085dfa7f23421bc3d4a61ce48c0
+  Parse: 7c0f115eff3e0cea3fac08d50bda47154edb8832
+  ParseUI: d1228541b02a36a7354c8f47747f5f7a89cf1ff0
+
+COCOAPODS: 0.37.2
