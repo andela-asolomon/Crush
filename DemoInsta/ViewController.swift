@@ -90,41 +90,43 @@ class ViewController: UIViewController, GPPSignInDelegate {
                     self.showAlertView("Error", message: "\(error.localizedDescription)")
                 } else {
                     
+                    let user = Users().getUserById(authData.uid)
                     
                     let userRef = ref.childByAppendingPath("users")
                     
                     userRef.observeEventType(FEventType.Value, withBlock: { (snapshot) -> Void in
-                        println(snapshot.value)
                         
-                        if (snapshot.value[authData.uid] != nil) {
-                            println("1")
-                            self.performSegueWithIdentifier("timeline", sender: authData)
-                            ProgressHUD.showSuccess("Logged in Successful")
+                        for user in [snapshot.value] {
                             
-                        } else if snapshot.value[authData.uid] == nil {
-                            println("2")
-                            var userDict = Dictionary<String, AnyObject>()
-                            
-                            if let userData = authData.providerData {
-                                let id: NSString = userData["id"] as! NSString
-                                let name: NSString = userData["displayName"] as! NSString
+                            if user[authData.uid] !== nil {
+                                self.performSegueWithIdentifier("timeline", sender: authData)
+                                ProgressHUD.showSuccess("Logged in Successful")
                                 
-                                if let userProfile: AnyObject = userData["cachedUserProfile"] {
+                            } else {
+                                
+                                var userDict = Dictionary<String, AnyObject>()
+                                
+                                if let userData = authData.providerData {
+                                    let id: NSString = userData["id"] as! NSString
+                                    let name: NSString = userData["displayName"] as! NSString
                                     
-                                    userDict["name"] = userProfile["name"] as! String
-                                    userDict["email"] = userProfile["email"] as! String
-                                    userDict["profile"] = userProfile["picture"] as! String
-                                    userDict["gender"] = userProfile["gender"] as! String
-                                    
-                                    userRef.childByAppendingPath("\(authData.uid)").setValue(userDict)
-                                    self.performSegueWithIdentifier("timeline", sender: authData)
-                                    ProgressHUD.showSuccess("Logged in Successful")
+                                    if let userProfile: AnyObject = userData["cachedUserProfile"] {
+                                        
+                                        userDict["name"] = userProfile["name"] as! String
+                                        userDict["email"] = userProfile["email"] as! String
+                                        userDict["profile"] = userProfile["picture"] as! String
+                                        userDict["gender"] = userProfile["gender"] as! String
+                                        
+                                        userRef.childByAppendingPath("\(authData.uid)").setValue(userDict)
+                                        self.performSegueWithIdentifier("timeline", sender: authData)
+                                        ProgressHUD.showSuccess("Logged in Successful")
+                                    }
                                 }
                             }
 
                             
                         }
-        
+                        
                         }, withCancelBlock: { (error) -> Void in
                             println(error)
                     })

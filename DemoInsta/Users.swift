@@ -13,13 +13,21 @@ class Users {
     let ref = Firebase(url: "https://mecrush.firebaseio.com/")
     let usersRef = Firebase(url: "https://mecrush.firebaseio.com/users")
     
+    func createUser(authData: FAuthData) {
+        
+        
+    }
+    
     func getUserById(id: String) -> FAuthData {
         
         usersRef.observeEventType(FEventType.Value, withBlock: { (snapshot) -> Void in
-            println(snapshot.value)
-            
-            
-            
+            for user in [snapshot.value] {
+                if user[id] !== nil {
+                    println("my data: \(user[id]!)")
+                } else {
+                    println("Lol")
+                }
+            }
             
         }) { (error) -> Void in
             println(error.localizedDescription)
