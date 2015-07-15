@@ -90,8 +90,6 @@ class ViewController: UIViewController, GPPSignInDelegate {
                     self.showAlertView("Error", message: "\(error.localizedDescription)")
                 } else {
                     
-                    let user = Users().getUserById(authData.uid)
-                    
                     let userRef = ref.childByAppendingPath("users")
                     
                     userRef.observeEventType(FEventType.Value, withBlock: { (snapshot) -> Void in
@@ -136,7 +134,7 @@ class ViewController: UIViewController, GPPSignInDelegate {
     }
     
     @IBAction func SignWithInstagram(sender: AnyObject) {
-        ProgressHUD.show("Please wait...", interaction: false)
+        ProgressHUD.show("Logging in...", interaction: false)
         authenticateWithGoogle()
     }
     

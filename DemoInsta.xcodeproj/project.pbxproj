@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		00CEB0A2868EA6FD92C73652 /* Pods_DemoInsta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB839B2D0957B7FD9C7EFEE /* Pods_DemoInsta.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		55096A251B4E951A007CC5D8 /* JHProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55096A241B4E951A007CC5D8 /* JHProgressHUD.swift */; };
 		55096A2A1B4E96FB007CC5D8 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 55096A271B4E96FB007CC5D8 /* ProgressHUD.bundle */; };
 		55096A2B1B4E96FB007CC5D8 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 55096A291B4E96FB007CC5D8 /* ProgressHUD.m */; };
-		556637A91B56111B00E53E4C /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556637A81B56111B00E53E4C /* Users.swift */; };
 		55A984ED1B4BD3A500DCCBFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A984EC1B4BD3A500DCCBFD /* AppDelegate.swift */; };
 		55A984EF1B4BD3A500DCCBFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A984EE1B4BD3A500DCCBFD /* ViewController.swift */; };
 		55A984F21B4BD3A500DCCBFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A984F01B4BD3A500DCCBFD /* Main.storyboard */; };
@@ -23,7 +21,6 @@
 		55AB5BA11B5510A200E754A6 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB5BA01B5510A200E754A6 /* ChatViewController.swift */; };
 		55AB5BA31B55331100E754A6 /* ImageManipulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB5BA21B55331100E754A6 /* ImageManipulation.swift */; };
 		55BB96F81B4BDA4E00AFE94D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BB96F71B4BDA4E00AFE94D /* Constants.swift */; };
-		55BB96FA1B4BE1CF00AFE94D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BB96F91B4BE1CF00AFE94D /* WebViewController.swift */; };
 		55D3E4A81B4D928B0069683F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D3E4A71B4D928B0069683F /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,11 +36,9 @@
 
 /* Begin PBXFileReference section */
 		4DB839B2D0957B7FD9C7EFEE /* Pods_DemoInsta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoInsta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		55096A241B4E951A007CC5D8 /* JHProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHProgressHUD.swift; sourceTree = "<group>"; };
 		55096A271B4E96FB007CC5D8 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		55096A281B4E96FB007CC5D8 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		55096A291B4E96FB007CC5D8 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
-		556637A81B56111B00E53E4C /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		55A984E71B4BD3A500DCCBFD /* DemoInsta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoInsta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A984EB1B4BD3A500DCCBFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55A984EC1B4BD3A500DCCBFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +54,6 @@
 		55AB5BA01B5510A200E754A6 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		55AB5BA21B55331100E754A6 /* ImageManipulation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManipulation.swift; sourceTree = "<group>"; };
 		55BB96F71B4BDA4E00AFE94D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		55BB96F91B4BE1CF00AFE94D /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		55D3E4A41B4D665C0069683F /* DemoInsta-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DemoInsta-Bridging-Header.h"; sourceTree = "<group>"; };
 		55D3E4A71B4D928B0069683F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = view/ProfileViewController.swift; sourceTree = "<group>"; };
 		59D5A0F1032D4020266F766A /* Pods-DemoInsta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoInsta.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DemoInsta/Pods-DemoInsta.debug.xcconfig"; sourceTree = "<group>"; };
@@ -128,13 +122,10 @@
 				55AB5B9C1B55106B00E754A6 /* TimelineViewController.swift */,
 				55D3E4A71B4D928B0069683F /* ProfileViewController.swift */,
 				55AB5BA21B55331100E754A6 /* ImageManipulation.swift */,
-				55096A241B4E951A007CC5D8 /* JHProgressHUD.swift */,
-				55BB96F91B4BE1CF00AFE94D /* WebViewController.swift */,
 				55A984F31B4BD3A500DCCBFD /* Images.xcassets */,
 				55A984F51B4BD3A500DCCBFD /* LaunchScreen.xib */,
 				55A984EA1B4BD3A500DCCBFD /* Supporting Files */,
 				55D3E4A41B4D665C0069683F /* DemoInsta-Bridging-Header.h */,
-				556637A81B56111B00E53E4C /* Users.swift */,
 			);
 			path = DemoInsta;
 			sourceTree = "<group>";
@@ -335,16 +326,13 @@
 			files = (
 				55AB5B9F1B55109500E754A6 /* CrushViewController.swift in Sources */,
 				55AB5BA31B55331100E754A6 /* ImageManipulation.swift in Sources */,
-				55096A251B4E951A007CC5D8 /* JHProgressHUD.swift in Sources */,
 				55A984EF1B4BD3A500DCCBFD /* ViewController.swift in Sources */,
-				556637A91B56111B00E53E4C /* Users.swift in Sources */,
 				55A984ED1B4BD3A500DCCBFD /* AppDelegate.swift in Sources */,
 				55096A2B1B4E96FB007CC5D8 /* ProgressHUD.m in Sources */,
 				55D3E4A81B4D928B0069683F /* ProfileViewController.swift in Sources */,
 				55AB5B9D1B55106B00E754A6 /* TimelineViewController.swift in Sources */,
 				55BB96F81B4BDA4E00AFE94D /* Constants.swift in Sources */,
 				55AB5BA11B5510A200E754A6 /* ChatViewController.swift in Sources */,
-				55BB96FA1B4BE1CF00AFE94D /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,8 @@ import UIKit
 
 class TimelineViewController: UIViewController {
     
-    var user: FAuthData?
+    let ref = Firebase(url: "https://mecrush.firebaseio.com/")
+    let usersRef = Firebase(url: "https://mecrush.firebaseio.com/users")
 
     override func viewDidLoad() {
         super.viewDidLoad()
