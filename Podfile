@@ -9,6 +9,8 @@ target 'DemoInsta' do
  pod "HanekeSwift"
  pod "Firebase", ">= 2.3.2"
  pod "googleplus-ios-sdk"
+ pod "Dollar"
+ pod "Cent"
 end
 
 target 'DemoInstaTests' do

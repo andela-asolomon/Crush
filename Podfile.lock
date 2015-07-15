@@ -1,5 +1,8 @@
 PODS:
   - Bolts/Tasks (1.2.0)
+  - Cent (3.0.1):
+    - Dollar (~> 3.0.1)
+  - Dollar (3.0.2)
   - Firebase (2.3.2)
   - googleplus-ios-sdk (1.7.1)
   - HanekeSwift (0.9.1)
@@ -10,6 +13,8 @@ PODS:
     - Parse (~> 1.7)
 
 DEPENDENCIES:
+  - Cent
+  - Dollar
   - Firebase (>= 2.3.2)
   - googleplus-ios-sdk
   - HanekeSwift
@@ -19,6 +24,8 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Bolts: d176cb1e0012175589e389a9db49b85e27787576
+  Cent: eb8da65c1b35207038f982cce20d2a18aa46527c
+  Dollar: fa1c277042a5e8208f2276abba056f27a812fcfe
   Firebase: 02fbeacfe19970856c872321788194524f21ffed
   googleplus-ios-sdk: 065d9135061a5f84c07656a68ced48336408fe35
   HanekeSwift: 50d37bfbc4432edc649167e538c259feccb4a2bb
