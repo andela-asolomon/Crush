@@ -149,7 +149,7 @@ class ViewController: UIViewController, GPPSignInDelegate {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "timeline" {
-            if let timelineVc = segue.destinationViewController as? TimelineViewController {
+            if let timelineVc = segue.destinationViewController as? TimelineTableViewController {
                 
             }
         }

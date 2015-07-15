@@ -66,31 +66,12 @@
                         <outlet property="bgImage" destination="Yir-Oq-J6N" id="ZTd-U1-NTT"/>
                         <outlet property="signInButton" destination="8yF-6E-k2G" id="BMo-pr-qXF"/>
                         <segue destination="kNN-5W-RaD" kind="push" identifier="timeline" id="kS4-jI-eso"/>
+                        <segue destination="l4h-cH-41P" kind="push" identifier="timeline" id="QFA-ua-uX2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PF0-aK-UMr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="472" y="97"/>
-        </scene>
-        <!--Timeline-->
-        <scene sceneID="eQK-bO-ERP">
-            <objects>
-                <viewController id="Rqb-Pp-Lq0" customClass="TimelineViewController" customModule="DemoInsta" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="XN9-jj-2cF"/>
-                        <viewControllerLayoutGuide type="bottom" id="18f-Bq-AuE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="rFf-zh-3m1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Timeline" image="center_direction-32" id="pdr-rN-2Td"/>
-                    <navigationItem key="navigationItem" title="Timeline" id="A23-PD-1fB"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cja-LR-rm8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1260" y="73"/>
+            <point key="canvasLocation" x="311" y="137"/>
         </scene>
         <!--Crush-->
         <scene sceneID="twO-ae-JMc">
@@ -275,7 +256,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nl8-nx-oFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6" y="389"/>
+            <point key="canvasLocation" x="-64" y="137"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fMq-QQ-1qL">
@@ -289,7 +270,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Rqb-Pp-Lq0" kind="relationship" relationship="viewControllers" id="jVf-M7-Cfd"/>
+                        <segue destination="l4h-cH-41P" kind="relationship" relationship="viewControllers" id="cSF-e6-6El"/>
                         <segue destination="hu3-lR-qdG" kind="relationship" relationship="viewControllers" id="Zne-oq-lVu"/>
                         <segue destination="wp9-lT-Pus" kind="relationship" relationship="viewControllers" id="RRg-7y-Kmy"/>
                         <segue destination="YYL-gW-wIM" kind="relationship" relationship="viewControllers" id="b6x-OA-v6G"/>
@@ -297,7 +278,41 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k0N-RP-8uD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="870" y="68"/>
+            <point key="canvasLocation" x="765" y="538"/>
+        </scene>
+        <!--Timeline-->
+        <scene sceneID="elb-Ze-96S">
+            <objects>
+                <tableViewController id="l4h-cH-41P" customClass="TimelineTableViewController" customModule="DemoInsta" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Nx1-IB-uQJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="JQk-Fx-IgD">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JQk-Fx-IgD" id="ip7-fm-xoU">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="l4h-cH-41P" id="1vx-6L-b4b"/>
+                            <outlet property="delegate" destination="l4h-cH-41P" id="M5J-Bp-qw6"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Timeline" image="center_direction-32" id="t0q-mX-d1M"/>
+                    <navigationItem key="navigationItem" id="Iap-S4-asi"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="fbq-Vm-emy">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refresh:" destination="l4h-cH-41P" eventType="valueChanged" id="8hd-Zc-wfX"/>
+                        </connections>
+                    </refreshControl>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PV1-Dl-erz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="940" y="66"/>
         </scene>
     </scenes>
     <resources>
@@ -313,4 +328,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="QFA-ua-uX2"/>
+    </inferredMetricsTieBreakers>
 </document>
