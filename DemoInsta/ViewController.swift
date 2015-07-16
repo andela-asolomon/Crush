@@ -114,6 +114,7 @@ class ViewController: UIViewController, GPPSignInDelegate {
                                         userDict["email"] = userProfile["email"] as! String
                                         userDict["profile"] = userProfile["picture"] as! String
                                         userDict["gender"] = userProfile["gender"] as! String
+                                        userDict["id"] = authData.uid as String
                                         
                                         userRef.childByAppendingPath("\(authData.uid)").setValue(userDict)
                                         self.performSegueWithIdentifier("timeline", sender: authData)

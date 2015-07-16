@@ -38,6 +38,12 @@ class TimelineTableViewController: UITableViewController {
         refreshControl.addTarget(self, action: Selector("loadAllUsers"), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refreshControl
         
+        if self.ref.authData != nil {
+            self.loadAllUsers()
+        } else {
+            ProgressHUD.showError("Error")
+        }
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
@@ -70,12 +76,12 @@ class TimelineTableViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         
-        if ref.authData != nil {
-            loadAllUsers()
-        } else {
-            ProgressHUD.showError("Error")
-        }
-
+//        SwiftSpinner.show("Please wait...")
+//        
+//        delay(seconds: 2) { () -> () in
+//            self.loadAllUsers()
+//            SwiftSpinner.hide()
+//        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -117,8 +123,10 @@ class TimelineTableViewController: UITableViewController {
                 cell?.userImage.hnk_setImageFromURL(url!)
                 activityIndicator.stopAnimating()
             })
-            
-//            cell?.userImage.hnk_setImageFromURL(url!)
+        }
+        
+        cell?.onButtonTapped = {
+            println("username: \(user)")
         }
         
         return cell!

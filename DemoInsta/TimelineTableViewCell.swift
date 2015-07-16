@@ -16,6 +16,8 @@ class TimelineTableViewCell: UITableViewCell {
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var crushBtn: UIButton!
     
+    var onButtonTapped : (() -> Void)? = nil
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,6 +31,11 @@ class TimelineTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func crushClick(sender: AnyObject) {
+        if let onButtonTapped = self.onButtonTapped {
+            onButtonTapped()
+        }
+    }
     
     
 }
