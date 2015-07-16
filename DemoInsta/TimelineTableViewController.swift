@@ -50,8 +50,15 @@ class TimelineTableViewController: UITableViewController {
     
     func loadAllUsers() {
         usersRef.observeEventType(FEventType.ChildAdded, withBlock: { (snapshot) -> Void in
-            self.users.append(snapshot.value)
-            println(self.users)
+            
+            for object in [snapshot.value] {
+                self.users.append(object)
+            }
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.tableView.reloadData()
+            }
+
         }) { (error) -> Void in
             ProgressHUD.showError("Error: \(error.localizedDescription)")
         }
@@ -75,22 +82,21 @@ class TimelineTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return self.tableData.count
+        return self.users.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell: TimelineTableViewCell? = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? TimelineTableViewCell
         
-//        let user: AnyObject = self.users[indexPath.row] as AnyObject
-//        println("user: \(user)")
-        cell?.username.text = self.tableData[indexPath.row]
+        let user: AnyObject = self.users[indexPath.row] as AnyObject
+        cell?.username.text = user["username"] as? String
         
-//        if var urlString: String? = user["profile"] as? String {
-            var url: NSURL? = NSURL(string: "https://lh5.googleusercontent.com/-q_EwzqjaGiA/AAAAAAAAAAI/AAAAAAAABSg/6iyvndL3uaM/photo.jpg")
-//
+        if var urlString: String? = user["profile"] as? String {
+            var url: NSURL? = NSURL(string: urlString!)
+            
             cell?.userImage.hnk_setImageFromURL(url!)
-//        }
+        }
         
         return cell!
         
