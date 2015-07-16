@@ -283,9 +283,9 @@
         <!--Timeline-->
         <scene sceneID="elb-Ze-96S">
             <objects>
-                <tableViewController id="l4h-cH-41P" customClass="TimelineTableViewController" customModule="DemoInsta" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="l4h-cH-41P" customClass="TimelineTableViewController" customModule="DemoInsta" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Nx1-IB-uQJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -301,6 +301,7 @@
                             <outlet property="delegate" destination="l4h-cH-41P" id="M5J-Bp-qw6"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Timeline" image="center_direction-32" id="t0q-mX-d1M"/>
                     <navigationItem key="navigationItem" id="Iap-S4-asi"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="fbq-Vm-emy">

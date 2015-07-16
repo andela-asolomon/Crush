@@ -14,12 +14,13 @@ class TimelineTableViewController: UITableViewController {
     let usersRef = Firebase(url: "https://mecrush.firebaseio.com/users")
     let cellIdentifier: String = "Cell"
     
-    var count = 0
+    var tableData: [String] = ["BMWW", "Ferrari", "Toyota", "Benz"]
 
     override func viewDidLoad() {
-        
-        tableView.registerNib(UINib(nibName: "TimelineTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.translucent = false
+        tableView.registerNib(UINib(nibName: "TimelineTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -30,9 +31,8 @@ class TimelineTableViewController: UITableViewController {
         self.tableView.allowsSelection = false
         
         var refreshControl = UIRefreshControl()
-        refreshControl.backgroundColor = UIColor.redColor()
-        refreshControl.tintColor = UIColor.grayColor()
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to Refresh")
+        refreshControl.backgroundColor = UIColor.grayColor()
+        refreshControl.tintColor = UIColor.whiteColor()
         refreshControl.addTarget(self, action: Selector("loadAllUsers"), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refreshControl
         
@@ -46,9 +46,12 @@ class TimelineTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
+    var users: [AnyObject] = []
+    
     func loadAllUsers() {
-        ref.observeEventType(FEventType.ChildAdded, withBlock: { (snapshot) -> Void in
-            println("value: \(snapshot.value)")
+        usersRef.observeEventType(FEventType.ChildAdded, withBlock: { (snapshot) -> Void in
+            self.users.append(snapshot.value)
+            println(self.users)
         }) { (error) -> Void in
             ProgressHUD.showError("Error: \(error.localizedDescription)")
         }
@@ -66,22 +69,28 @@ class TimelineTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return self.tableData.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell: TimelineTableViewCell? = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? TimelineTableViewCell
         
-        if cell == nil {
-            cell = NSBundle.mainBundle().loadNibNamed("TimelineTableViewCell", owner: self, options: nil)[0] as? TimelineTableViewCell
-        }
+//        let user: AnyObject = self.users[indexPath.row] as AnyObject
+//        println("user: \(user)")
+        cell?.username.text = self.tableData[indexPath.row]
+        
+//        if var urlString: String? = user["profile"] as? String {
+            var url: NSURL? = NSURL(string: "https://lh5.googleusercontent.com/-q_EwzqjaGiA/AAAAAAAAAAI/AAAAAAAABSg/6iyvndL3uaM/photo.jpg")
+//
+            cell?.userImage.hnk_setImageFromURL(url!)
+//        }
         
         return cell!
         
