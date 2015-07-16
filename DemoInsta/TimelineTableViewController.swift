@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftSpinner
+import Haneke
 
 class TimelineTableViewController: UITableViewController {
     
@@ -36,12 +38,6 @@ class TimelineTableViewController: UITableViewController {
         refreshControl.addTarget(self, action: Selector("loadAllUsers"), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refreshControl
         
-        if ref.authData != nil {
-            loadAllUsers()
-        } else {
-            ProgressHUD.showError("Error")
-        }
-        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
@@ -64,6 +60,22 @@ class TimelineTableViewController: UITableViewController {
         }
         
         self.refreshControl?.endRefreshing()
+    }
+    
+    func refresh() {
+        
+    }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        
+        if ref.authData != nil {
+            loadAllUsers()
+        } else {
+            ProgressHUD.showError("Error")
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -95,7 +107,18 @@ class TimelineTableViewController: UITableViewController {
         if var urlString: String? = user["profile"] as? String {
             var url: NSURL? = NSURL(string: urlString!)
             
-            cell?.userImage.hnk_setImageFromURL(url!)
+            let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
+            activityIndicator.frame = CGRect(x: 150, y: 100, width: 50, height: 50)
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.startAnimating()
+            cell?.userImage.addSubview(activityIndicator)
+            
+            delay(seconds: 2, { () -> () in
+                cell?.userImage.hnk_setImageFromURL(url!)
+                activityIndicator.stopAnimating()
+            })
+            
+//            cell?.userImage.hnk_setImageFromURL(url!)
         }
         
         return cell!

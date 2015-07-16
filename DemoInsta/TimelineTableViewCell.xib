@@ -56,6 +56,7 @@
                 <outlet property="crushBtn" destination="0xZ-oD-2Fq" id="Cwe-r4-eJd"/>
                 <outlet property="userImage" destination="tkp-mX-sVw" id="6bm-CC-cHS"/>
                 <outlet property="username" destination="O3b-zV-gn9" id="1dv-6T-w8c"/>
+                <outlet property="view" destination="H2p-sc-9uM" id="Mdj-Lx-QEr"/>
             </connections>
             <point key="canvasLocation" x="202" y="388"/>
         </tableViewCell>

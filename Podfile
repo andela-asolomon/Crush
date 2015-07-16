@@ -11,6 +11,7 @@ target 'DemoInsta' do
  pod "googleplus-ios-sdk"
  pod "Dollar"
  pod "Cent"
+ pod "SwiftSpinner"
 end
 
 target 'DemoInstaTests' do

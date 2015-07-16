@@ -17,3 +17,11 @@ let Google = [
     "consumerKey": "1007981792378-djv9k8ppai4ddirf9pbrfvpv1ju4b6o3.apps.googleusercontent.com",
     "consumerSecret": "LE3dkfQ-8XyXXrlM6FDYQStV"
 ]
+
+func delay(#seconds: Double, completion:()->()) {
+    let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64( Double(NSEC_PER_SEC) * seconds ))
+    
+    dispatch_after(popTime, dispatch_get_main_queue()) {
+        completion()
+    }
+}
